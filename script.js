@@ -1,5 +1,3 @@
-var s=skrollr.init();
-document.body.id = "skrollr-body"
 
 $(window).scroll(function(e){
                  if($(window).scrollTop()>300){
