@@ -1,4 +1,3 @@
-
 $(window).scroll(function(e){
                  if($(window).scrollTop()>300){
                     $("#exp").css("opacity","0");
