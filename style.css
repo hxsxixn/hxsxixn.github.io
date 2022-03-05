@@ -9,6 +9,7 @@ html, body {
   margin: 0px;
   background-color: #e6d1df;
   user-select: none;
+  -webkit-overflow-scrolling: auto
 }
 
 nav.navbar {
