@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Evan&#39;s Blog</title>
+    <link>https://hxsxixn.github.io/</link>
+    <description>Recent content on Evan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hxsxixn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://hxsxixn.github.io/about/</link>
+      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/about/</guid>
+      <description>Github: hxsxixn</description>
+    </item>
+    
+    <item>
+      <title>利用Markdown語法編寫文章</title>
+      <link>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</link>
+      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</guid>
+      <description>標題大小 #代表級數
+# 一級標題 ## 二級標題 ### 三級標題 #### 四級標題 ##### 五級標題 ###### 六級標題 粗體 粗體字
+**粗體字** 斜體 斜體字
+*斜體字* 無法粗體和斜體一起用,也無法利用markdown語法更改顏色
+刪除線 刪除線
+~~刪除線~~ 有序序列 內縮打四個隔空白建
+ no.1  s1 s2   no.2 no.3  1. no.1 1. s1 1. s2 1. no.2 1. no.3 無序序列  no1  s1 s2   no2  * no1 * s1 * s2 * no2 引用  hello
+ &amp;gt; hello 超連結 外部連結 內部連結</description>
+    </item>
+    
+  </channel>
+</rss>
