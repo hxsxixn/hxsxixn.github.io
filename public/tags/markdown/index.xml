@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on Evan&#39;s Blog</title>
+    <link>https://hxsxixn.github.io/tags/markdown/</link>
+    <description>Recent content in markdown on Evan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Mon, 07 Mar 2022 16:00:00 +0000</lastBuildDate><atom:link href="https://hxsxixn.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用Markdown語法編寫文章</title>
+      <link>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</link>
+      <pubDate>Mon, 07 Mar 2022 16:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</guid>
+      <description>標題大小 #一級標題 ##二級標題 ###三級標題 ####四級標題 #####五級標題 ######六級標題 ##粗體
+**粗體字** ##斜體
+*斜體字* 無法粗體和斜體一起用,也無法利用markdown語法更改顏色</description>
+    </item>
+    
+  </channel>
+</rss>
