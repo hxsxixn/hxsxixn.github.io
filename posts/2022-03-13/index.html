@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Vue.js將變數帶入模板 | No Code No Life</title>
+  <link rel = 'canonical' href = 'https://hxsxixn.github.io/posts/2022-03-13/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Vue.js將變數帶入模板" />
+<meta property="og:description" content="codepen: 互動鋼琴 v-model
+HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－
+{{}} 使用大括號來取代資料
+v-for 產生資料,套用進想顯示的樣式中
+.classname(v-for=&#34;(w,id) in data1&#34;) {{w}} //產生資料,w為自定義名稱,id是資料順序 v-if 設置條件來過濾資料的顯示
+.classname(v-if=&#34;w.type==&#39;block&#39;&#34;) //w之下的&#34;type物件&#34;,若為block則顯示 v-on 用來綁定事件
+.classname(v-on:click=&#34;function名稱&#34;) //function在methods中定義 v-bind 可直接使用html語法
+.classname(v-bind:class=&#34;background-color:pink&#34;).classname(v-bind:class=&#34;playnote(aa)?&#39;true&#39;:&#39;false&#39;&#34;) //也可使用條件 v-model 綁定使用者輸入內容
+input(v-model=&#34;color&#34;)input(v-model=&#34;class&#34;).testbox(style=&#34;background-color: {{color}}&#34; class=&#34;{{class}}&#34;) JavaScript－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+var vm=new Vue({el:&#34;#app&#34;, //作用的iddata:{ //可定義多組資料,自定義名稱並用逗號隔開data1: data_list, //資料1data2:[{name:&#34;&#34;,price:},{name:&#34;&#34;,price:}], //資料2},methods:{ //編寫事件,playnote是事件的function名稱playnote: function(aa){},};}), " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hxsxixn.github.io/posts/2022-03-13/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-13T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue.js將變數帶入模板"/>
+<meta name="twitter:description" content="codepen: 互動鋼琴 v-model
+HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－
+{{}} 使用大括號來取代資料
+v-for 產生資料,套用進想顯示的樣式中
+.classname(v-for=&#34;(w,id) in data1&#34;) {{w}} //產生資料,w為自定義名稱,id是資料順序 v-if 設置條件來過濾資料的顯示
+.classname(v-if=&#34;w.type==&#39;block&#39;&#34;) //w之下的&#34;type物件&#34;,若為block則顯示 v-on 用來綁定事件
+.classname(v-on:click=&#34;function名稱&#34;) //function在methods中定義 v-bind 可直接使用html語法
+.classname(v-bind:class=&#34;background-color:pink&#34;).classname(v-bind:class=&#34;playnote(aa)?&#39;true&#39;:&#39;false&#39;&#34;) //也可使用條件 v-model 綁定使用者輸入內容
+input(v-model=&#34;color&#34;)input(v-model=&#34;class&#34;).testbox(style=&#34;background-color: {{color}}&#34; class=&#34;{{class}}&#34;) JavaScript－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+var vm=new Vue({el:&#34;#app&#34;, //作用的iddata:{ //可定義多組資料,自定義名稱並用逗號隔開data1: data_list, //資料1data2:[{name:&#34;&#34;,price:},{name:&#34;&#34;,price:}], //資料2},methods:{ //編寫事件,playnote是事件的function名稱playnote: function(aa){},};}), "/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://hxsxixn.github.io/css/styles.10d2d68b0a3b117cda37871586641d2372d45cf09a3b297409c853ed7e3a90775475f0e11777bba4eedb0dfc0dd9330d13757f9d27d4e0fb4ca9f80a853c2f1c.css" integrity="sha512-ENLWiwo7EXzaN4cVhmQdI3LUXPCaOyl0CchT7X46kHdUdfDhF3e7pO7bDfwN2TMNE3V/nSfU4PtMqfgKhTwvHA=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://hxsxixn.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/tools">Tools</a></li>
+         
+        <li><a href="/portfolio">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://hxsxixn.github.io/portfolio/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f;src=sdkpreparse" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&text=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&is_video=false&description=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf&body=Check out this article: https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&name=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf&description=codepen%3a%20%e4%ba%92%e5%8b%95%e9%8b%bc%e7%90%b4%20v-model%0aHTML%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%0a%7b%7b%7d%7d%20%e4%bd%bf%e7%94%a8%e5%a4%a7%e6%8b%ac%e8%99%9f%e4%be%86%e5%8f%96%e4%bb%a3%e8%b3%87%e6%96%99%0av-for%20%e7%94%a2%e7%94%9f%e8%b3%87%e6%96%99%2c%e5%a5%97%e7%94%a8%e9%80%b2%e6%83%b3%e9%a1%af%e7%a4%ba%e7%9a%84%e6%a8%a3%e5%bc%8f%e4%b8%ad%0a.classname%28v-for%3d%26%2334%3b%28w%2cid%29%20in%20data1%26%2334%3b%29%20%7b%7bw%7d%7d%20%2f%2f%e7%94%a2%e7%94%9f%e8%b3%87%e6%96%99%2cw%e7%82%ba%e8%87%aa%e5%ae%9a%e7%be%a9%e5%90%8d%e7%a8%b1%2cid%e6%98%af%e8%b3%87%e6%96%99%e9%a0%86%e5%ba%8f%20v-if%20%e8%a8%ad%e7%bd%ae%e6%a2%9d%e4%bb%b6%e4%be%86%e9%81%8e%e6%bf%be%e8%b3%87%e6%96%99%e7%9a%84%e9%a1%af%e7%a4%ba%0a.classname%28v-if%3d%26%2334%3bw.type%3d%3d%26%2339%3bblock%26%2339%3b%26%2334%3b%29%20%2f%2fw%e4%b9%8b%e4%b8%8b%e7%9a%84%26%2334%3btype%e7%89%a9%e4%bb%b6%26%2334%3b%2c%e8%8b%a5%e7%82%bablock%e5%89%87%e9%a1%af%e7%a4%ba%20v-on%20%e7%94%a8%e4%be%86%e7%b6%81%e5%ae%9a%e4%ba%8b%e4%bb%b6%0a.classname%28v-on%3aclick%3d%26%2334%3bfunction%e5%90%8d%e7%a8%b1%26%2334%3b%29%20%2f%2ffunction%e5%9c%a8methods%e4%b8%ad%e5%ae%9a%e7%be%a9%20v-bind%20%e5%8f%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8html%e8%aa%9e%e6%b3%95%0a.classname%28v-bind%3aclass%3d%26%2334%3bbackground-color%3apink%26%2334%3b%29%0d.classname%28v-bind%3aclass%3d%26%2334%3bplaynote%28aa%29%3f%26%2339%3btrue%26%2339%3b%3a%26%2339%3bfalse%26%2339%3b%26%2334%3b%29%20%2f%2f%e4%b9%9f%e5%8f%af%e4%bd%bf%e7%94%a8%e6%a2%9d%e4%bb%b6%20v-model%20%e7%b6%81%e5%ae%9a%e4%bd%bf%e7%94%a8%e8%80%85%e8%bc%b8%e5%85%a5%e5%85%a7%e5%ae%b9%0ainput%28v-model%3d%26%2334%3bcolor%26%2334%3b%29%0dinput%28v-model%3d%26%2334%3bclass%26%2334%3b%29%0d.testbox%28style%3d%26%2334%3bbackground-color%3a%20%7b%7bcolor%7d%7d%26%2334%3b%20class%3d%26%2334%3b%7b%7bclass%7d%7d%26%2334%3b%29%20JavaScript%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%0avar%20vm%3dnew%20Vue%28%7b%0del%3a%26%2334%3b%23app%26%2334%3b%2c%20%2f%2f%e4%bd%9c%e7%94%a8%e7%9a%84id%0ddata%3a%7b%20%2f%2f%e5%8f%af%e5%ae%9a%e7%be%a9%e5%a4%9a%e7%b5%84%e8%b3%87%e6%96%99%2c%e8%87%aa%e5%ae%9a%e7%be%a9%e5%90%8d%e7%a8%b1%e4%b8%a6%e7%94%a8%e9%80%97%e8%99%9f%e9%9a%94%e9%96%8b%0ddata1%3a%20data_list%2c%20%2f%2f%e8%b3%87%e6%96%991%0ddata2%3a%5b%7bname%3a%26%2334%3b%26%2334%3b%2cprice%3a%7d%2c%7bname%3a%26%2334%3b%26%2334%3b%2cprice%3a%7d%5d%2c%20%2f%2f%e8%b3%87%e6%96%992%0d%7d%2c%0dmethods%3a%7b%20%2f%2f%e7%b7%a8%e5%af%ab%e4%ba%8b%e4%bb%b6%2cplaynote%e6%98%af%e4%ba%8b%e4%bb%b6%e7%9a%84function%e5%90%8d%e7%a8%b1%0dplaynote%3a%20function%28aa%29%7b%0d%7d%2c%0d%7d%3b%0d%7d%29%2c%20" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&t=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">{{}}</a></li>
+    <li><a href="#v-for">v-for</a></li>
+    <li><a href="#v-if">v-if</a></li>
+    <li><a href="#v-on">v-on</a></li>
+    <li><a href="#v-bind">v-bind</a></li>
+    <li><a href="#v-model">v-model</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Vue.js將變數帶入模板
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-03-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-03-13</time>
+          
+        </div>
+        
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/vue.js" rel="tag">Vue.js</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/javascript" rel="tag">JavaScript</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>codepen:
+<a href="https://codepen.io/2173/pen/ExbexKP">互動鋼琴</a>
+<a href="https://codepen.io/2173/pen/WNXdEjP">v-model</a></p>
+<p>HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<h2 id="heading">{{}}</h2>
+<p>使用大括號來取代資料</p>
+<h2 id="v-for">v-for</h2>
+<p>產生資料,套用進想顯示的樣式中</p>
+<pre tabindex="0"><code>.classname(v-for=&#34;(w,id) in data1&#34;) {{w}}  //產生資料,w為自定義名稱,id是資料順序
+</code></pre><h2 id="v-if">v-if</h2>
+<p>設置條件來過濾資料的顯示</p>
+<pre tabindex="0"><code>.classname(v-if=&#34;w.type==&#39;block&#39;&#34;)   //w之下的&#34;type物件&#34;,若為block則顯示
+</code></pre><h2 id="v-on">v-on</h2>
+<p>用來綁定事件</p>
+<pre tabindex="0"><code>.classname(v-on:click=&#34;function名稱&#34;)   //function在methods中定義
+</code></pre><h2 id="v-bind">v-bind</h2>
+<p>可直接使用html語法</p>
+<pre tabindex="0"><code>.classname(v-bind:class=&#34;background-color:pink&#34;)
+.classname(v-bind:class=&#34;playnote(aa)?&#39;true&#39;:&#39;false&#39;&#34;)   //也可使用條件
+</code></pre><h2 id="v-model">v-model</h2>
+<p>綁定使用者輸入內容</p>
+<pre tabindex="0"><code>input(v-model=&#34;color&#34;)
+input(v-model=&#34;class&#34;)
+
+.testbox(style=&#34;background-color: {{color}}&#34; class=&#34;{{class}}&#34;)
+</code></pre><p>JavaScript－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<pre tabindex="0"><code>var vm=new Vue({
+  el:&#34;#app&#34;,   //作用的id
+  data:{   //可定義多組資料,自定義名稱並用逗號隔開
+    data1: data_list, //資料1
+    data2:[{name:&#34;&#34;,price:},{name:&#34;&#34;,price:}], //資料2
+        },
+  methods:{    //編寫事件,playnote是事件的function名稱
+    playnote: function(aa){
+                          },
+           };
+    }),
+</code></pre>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/tools">Tools</a></li>
+         
+          <li><a href="/portfolio">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">{{}}</a></li>
+    <li><a href="#v-for">v-for</a></li>
+    <li><a href="#v-if">v-if</a></li>
+    <li><a href="#v-on">v-on</a></li>
+    <li><a href="#v-bind">v-bind</a></li>
+    <li><a href="#v-model">v-model</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f;src=sdkpreparse" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&text=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&is_video=false&description=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf&body=Check out this article: https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&title=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&name=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf&description=codepen%3a%20%e4%ba%92%e5%8b%95%e9%8b%bc%e7%90%b4%20v-model%0aHTML%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%0a%7b%7b%7d%7d%20%e4%bd%bf%e7%94%a8%e5%a4%a7%e6%8b%ac%e8%99%9f%e4%be%86%e5%8f%96%e4%bb%a3%e8%b3%87%e6%96%99%0av-for%20%e7%94%a2%e7%94%9f%e8%b3%87%e6%96%99%2c%e5%a5%97%e7%94%a8%e9%80%b2%e6%83%b3%e9%a1%af%e7%a4%ba%e7%9a%84%e6%a8%a3%e5%bc%8f%e4%b8%ad%0a.classname%28v-for%3d%26%2334%3b%28w%2cid%29%20in%20data1%26%2334%3b%29%20%7b%7bw%7d%7d%20%2f%2f%e7%94%a2%e7%94%9f%e8%b3%87%e6%96%99%2cw%e7%82%ba%e8%87%aa%e5%ae%9a%e7%be%a9%e5%90%8d%e7%a8%b1%2cid%e6%98%af%e8%b3%87%e6%96%99%e9%a0%86%e5%ba%8f%20v-if%20%e8%a8%ad%e7%bd%ae%e6%a2%9d%e4%bb%b6%e4%be%86%e9%81%8e%e6%bf%be%e8%b3%87%e6%96%99%e7%9a%84%e9%a1%af%e7%a4%ba%0a.classname%28v-if%3d%26%2334%3bw.type%3d%3d%26%2339%3bblock%26%2339%3b%26%2334%3b%29%20%2f%2fw%e4%b9%8b%e4%b8%8b%e7%9a%84%26%2334%3btype%e7%89%a9%e4%bb%b6%26%2334%3b%2c%e8%8b%a5%e7%82%bablock%e5%89%87%e9%a1%af%e7%a4%ba%20v-on%20%e7%94%a8%e4%be%86%e7%b6%81%e5%ae%9a%e4%ba%8b%e4%bb%b6%0a.classname%28v-on%3aclick%3d%26%2334%3bfunction%e5%90%8d%e7%a8%b1%26%2334%3b%29%20%2f%2ffunction%e5%9c%a8methods%e4%b8%ad%e5%ae%9a%e7%be%a9%20v-bind%20%e5%8f%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8html%e8%aa%9e%e6%b3%95%0a.classname%28v-bind%3aclass%3d%26%2334%3bbackground-color%3apink%26%2334%3b%29%0d.classname%28v-bind%3aclass%3d%26%2334%3bplaynote%28aa%29%3f%26%2339%3btrue%26%2339%3b%3a%26%2339%3bfalse%26%2339%3b%26%2334%3b%29%20%2f%2f%e4%b9%9f%e5%8f%af%e4%bd%bf%e7%94%a8%e6%a2%9d%e4%bb%b6%20v-model%20%e7%b6%81%e5%ae%9a%e4%bd%bf%e7%94%a8%e8%80%85%e8%bc%b8%e5%85%a5%e5%85%a7%e5%ae%b9%0ainput%28v-model%3d%26%2334%3bcolor%26%2334%3b%29%0dinput%28v-model%3d%26%2334%3bclass%26%2334%3b%29%0d.testbox%28style%3d%26%2334%3bbackground-color%3a%20%7b%7bcolor%7d%7d%26%2334%3b%20class%3d%26%2334%3b%7b%7bclass%7d%7d%26%2334%3b%29%20JavaScript%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%ef%bc%8d%0avar%20vm%3dnew%20Vue%28%7b%0del%3a%26%2334%3b%23app%26%2334%3b%2c%20%2f%2f%e4%bd%9c%e7%94%a8%e7%9a%84id%0ddata%3a%7b%20%2f%2f%e5%8f%af%e5%ae%9a%e7%be%a9%e5%a4%9a%e7%b5%84%e8%b3%87%e6%96%99%2c%e8%87%aa%e5%ae%9a%e7%be%a9%e5%90%8d%e7%a8%b1%e4%b8%a6%e7%94%a8%e9%80%97%e8%99%9f%e9%9a%94%e9%96%8b%0ddata1%3a%20data_list%2c%20%2f%2f%e8%b3%87%e6%96%991%0ddata2%3a%5b%7bname%3a%26%2334%3b%26%2334%3b%2cprice%3a%7d%2c%7bname%3a%26%2334%3b%26%2334%3b%2cprice%3a%7d%5d%2c%20%2f%2f%e8%b3%87%e6%96%992%0d%7d%2c%0dmethods%3a%7b%20%2f%2f%e7%b7%a8%e5%af%ab%e4%ba%8b%e4%bb%b6%2cplaynote%e6%98%af%e4%ba%8b%e4%bb%b6%e7%9a%84function%e5%90%8d%e7%a8%b1%0dplaynote%3a%20function%28aa%29%7b%0d%7d%2c%0d%7d%3b%0d%7d%29%2c%20" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fhxsxixn.github.io%2fposts%2f2022-03-13%2f&t=Vue.js%e5%b0%87%e8%ae%8a%e6%95%b8%e5%b8%b6%e5%85%a5%e6%a8%a1%e6%9d%bf" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Evan 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/tools">Tools</a></li>
+         
+        <li><a href="/portfolio">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
