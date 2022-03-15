@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Evan</copyright>
-    <lastBuildDate>Sun, 13 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hxsxixn.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hxsxixn.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swiper幻燈片</title>
+      <link>https://hxsxixn.github.io/posts/2022-03-14-swiper/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/posts/2022-03-14-swiper/</guid>
+      <description>codepen: Netflix Single’s Inferno
+Swiper Swiper中文文檔
+HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+1.swiper　//content,7之後的版本是&amp;#34;swiper&amp;#34;,6之前是&amp;#34;.swiper-container&amp;#34; 2　.swiper-wrapper 3 .swiper-slide //slide 1 4 img 5 .swiper-slide //slide 2 6 img 7 .swiper-pagination //分頁器 Javascript－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+1var swiper = new Swiper(&amp;#39;.swiper&amp;#39;,{ 2 pagination: {el:&amp;#39;.swiper-pagination&amp;#39;}, //分頁器設定 3 loop: true, //循環 4 speed: 1000, 5 direction:&amp;#39;vertical&amp;#39; //輪播方向,預設為水平, 6 autoplay:{ 7 delay: 2000, //自動撥放停留時間 8 disableOnInteraction: false, //使用者滑動後是否停止播放 9 }, 10}) </description>
+    </item>
+    
     <item>
       <title>Vue.js將變數帶入模板</title>
       <link>https://hxsxixn.github.io/posts/2022-03-13/</link>
