@@ -65,10 +65,21 @@ BrandColors: https://brandcolors.net/
 －－－－－－－－－－－－－－－－　其他 －－－－－－－－－－－－－－－－
 JSON online: https://jsoneditoronline.org 
 Vue.js中文指南: https://book.vue.tw/ 
+jQuery Quick API Reference: https://oscarotero.com/jquery/
 Swiper中文文檔: https://www.swiper.com.cn/usage/
 HTML語法教學: https://www.fooish.com/html/
 Bootstrap: https://getbootstrap.com/
 Leetcode: https://leetcode.com/problemset/all/</description>
+    </item>
+    
+    <item>
+      <title>Navbar切換方式</title>
+      <link>https://hxsxixn.github.io/posts/2022-03-08-navbar/</link>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/posts/2022-03-08-navbar/</guid>
+      <description>codepen
+滑動 $(&amp;#34;.icon&amp;#34;).click(function(){if($(&amp;#39;.list-box&amp;#39;).css(&amp;#34;display&amp;#34;)==&amp;#34;block&amp;#34;){$(&amp;#34;.list-box&amp;#34;).slideUp();}else{$(&amp;#34;.list-box&amp;#34;).slideDown(); }}) 直接切換 $(&amp;#34;.icon&amp;#34;).click(function(){$(&amp;#34;.list-box&amp;#34;).toggle();}) </description>
     </item>
     
     <item>
@@ -85,23 +96,7 @@ Github: hxsxixn</description>
     </item>
     
     <item>
-      <title>利用Markdown語法編寫文章</title>
-      <link>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</link>
-      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-03-07-markdown-notes/</guid>
-      <description>標題大小 #代表級數
-# 一級標題 ## 二級標題 ### 三級標題 #### 四級標題 ##### 五級標題 ###### 六級標題 粗體 粗體字
-**粗體字** 斜體 斜體字
-*斜體字* 無法粗體和斜體一起用,也無法利用markdown語法更改顏色
-刪除線 刪除線
-~~刪除線~~ 有序序列 內縮打四個隔空白建
- no.1  s1 s2   no.2 no.3  1. no.1 1. s1 1. s2 1. no.2 1. no.3 無序序列  no1  s1 s2   no2  * no1 * s1 * s2 * no2 引用  hello
- &amp;gt; hello 超連結 外部連結 內部連結</description>
-    </item>
-    
-    <item>
-      <title>API串接的兩種方式</title>
+      <title>API串接方式</title>
       <link>https://hxsxixn.github.io/posts/2022-02-27/</link>
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
       
@@ -110,6 +105,22 @@ Github: hxsxixn</description>
 https://unsplash.com/
 XMLHttpRequest() var url=&amp;#34;https://api.unsplash.com/photos/?client_id=lcYNKXPrF1D5sa_ZlmEc3Wd4cRmigHF3X5OD9eDdCqY&amp;amp;page=11&amp;#34;;xhr = new XMLHttpRequest();xhr.open(&amp;#39;GET&amp;#39;, url, true);xhr.onload = function() {if(this.status &amp;gt;= 200 &amp;amp;&amp;amp; this.status &amp;lt; 400 ){vm.photo = JSON.parse(this.responseText);console.log(vm.photo);}};xhr.send();xhr.onerror = function(){return false}; code pen
 Alax $.ajax({// type:&amp;#34;GET&amp;#34;,url: url,// datatype:&amp;#34;text&amp;#34;,// async: true,success: function(res){vm.photo=JSON.parse(JSON.stringify(res)) }}); codepen codepen hahow</description>
+    </item>
+    
+    <item>
+      <title>利用Markdown語法編寫文章</title>
+      <link>https://hxsxixn.github.io/posts/2022-02-26-markdown-notes/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hxsxixn.github.io/posts/2022-02-26-markdown-notes/</guid>
+      <description>標題大小 #代表級數
+# 一級標題 ## 二級標題 ### 三級標題 #### 四級標題 ##### 五級標題 ###### 六級標題 粗體 粗體字
+**粗體字** 斜體 斜體字
+*斜體字* 無法粗體和斜體一起用,也無法利用markdown語法更改顏色
+刪除線 刪除線
+~~刪除線~~ 有序序列 內縮打四個隔空白建
+ no.1  s1 s2   no.2 no.3  1. no.1 1. s1 1. s2 1. no.2 1. no.3 無序序列  no1  s1 s2   no2  * no1 * s1 * s2 * no2 引用  hello
+ &amp;gt; hello 超連結 外部連結 內部連結</description>
     </item>
     
   </channel>
