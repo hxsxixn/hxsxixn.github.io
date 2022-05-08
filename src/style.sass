@@ -1,0 +1,377 @@
+*
+  position: relative
+  font-family: 微軟正黑體
+
+:root
+  --light_sub: #F6C393
+  --light_btn: #51D5C2
+
+$color_light: #E5E5E5
+$color_dark: #333
+$color_bg: #fefefe
+$color_btn: var(--light_btn)
+$color_sub: var(--light_sub)
+
+@keyframes fadeIn
+  from
+    transform: translateY(50px)
+  to
+    transform: translateY(0px)
+    
+@keyframes fadeLeft
+  from
+    transform: translateX(100px)
+  to
+    transform: translateX(0px)
+@keyframes fadeRight
+  from
+    transform: translateX(-100px)
+  to
+    transform: translateX(0px)
+  
+html, body
+  margin: 0
+  padding: 0
+  background-color: $color_light
+  transition: 1s
+  width: 100%
+  height: 100%
+  
+body
+  display: flex
+  align-items: center
+
+main
+  width:800px
+  margin-left: auto
+  margin-right: auto
+  .navbar
+    display: flex
+    align-items: center
+    padding: 10px 10px
+    user-select: none
+  ul
+    list-style: none
+    padding-left: 0px
+    margin: 0px
+    li[menu-id="0"]
+      animation: fadeLeft 0.5s
+    li[menu-id="1"]
+      animation: fadeLeft 0.8s
+    li[menu-id="2"]
+      animation: fadeLeft 1s
+    li[menu-id="3"]
+      animation: fadeLeft 1.3s
+    li
+      color: $color_bg
+      display: inline-block
+      font-size: 22px
+      cursor: pointer
+      margin-right: 8px
+      transition: 1s all
+      width: 48px
+      height: 48px
+      overflow: hidden
+      i
+        margin-left: 12px
+        margin-top: 10px
+        span
+          display: none
+          font-family: 'M PLUS Rounded 1c', sans-serif
+          font-weight: bold
+          &:after
+            content:""
+            display: block
+            margin-left: 42px
+            margin-top: 3px 
+            width: 55px
+            height: 2px
+            background-color: $color_sub
+      i.fa.fa-envelope
+        margin-left: 11px
+        span:after
+          width: 75px
+      &:before
+        content:""
+        display: inline-block
+        width: 44px
+        height: 44px
+        background-color: $color_btn
+        position: absolute
+        border-radius: 100% 
+        box-shadow: 2px 2px 2px rgba(#333,0.4)
+      &:hover
+        color: $color_btn
+        width: 135px
+        &:before
+          display: none
+        i
+          span
+            display: inline
+            margin-left: 10px
+    li.active
+      color: $color_btn
+      width: 135px
+      &:before
+          display: none
+      i
+        span
+          display: inline
+          margin-left: 10px
+.bg
+  width: 100%
+  height: 430px
+  background-color: $color_bg
+  border-radius: 26px
+  box-shadow: 0px 0px 5px rgba(#333,0.4)
+  
+section#about
+  // display: none
+  padding: 30px
+  color: #333
+  height: 350px
+  user-select: none
+  .about
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    height: 100%
+    .box1
+      flex: 1 1 200px
+      text-align: center
+      img
+        width: 80%
+        border-radius: 50%
+        animation: fadeIn 1s
+        
+    .box2
+      padding: 20px 0px 20px 40px
+      flex: 1 1 250px
+      .name
+        font-size: 20px
+        margin-top: 40px
+        animation: fadeIn 0.7s
+        font-weight: bold
+        .ch_name
+          letter-spacing: 2px
+        .en_name
+          position: absolute
+          left: calc(70% - 50px)
+        &:before
+          content:""
+          display: block
+          position: absolute
+          width: 30px
+          height: 30px
+          border-radius: 50%
+          background-color: $color_sub
+          opacity: 0.6
+          left: -20px
+          top: -10px
+        &:after
+          content:""
+          display: block
+          width: 70%
+          height: 4px
+          background-color: $color_sub
+          opacity: 0.6
+          margin-left: 20px
+      .info
+        margin-top: 40px
+        font-size: 16px
+        line-height: 24px
+        animation: fadeIn 1s
+        span
+          display: block
+section#skills
+  user-select: none
+  width: 100%
+  height: 430px
+  display: none
+  // *
+  //  border: solid 1px black
+  .skills
+    width: 90%
+    height: 100%
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    align-items: center
+    .box1
+      width: 48%
+      animation: fadeIn 0.7s
+      #chart1
+        max-width: 380px
+    .box2
+      width: 48%
+      margin-left: auto
+      animation: fadeIn 1s
+      #chart2 
+        max-width: 380px
+        
+section#works
+  display: none
+  padding: 40px 30px 40px 60px
+  .works
+  .swiper.mySwiper
+    max-width: calc(100% - 90px)
+    height: 350px
+    position: absolute
+    animation: fadeIn 1s
+    .swiper-wrapper
+      .swiper-slide
+        opacity: 0
+        img
+          width: 88%
+          height: 100%
+          transition: 1.2s
+          opacity: 0
+          border-radius: 5px
+        .board
+          width: 280px
+          height: 150px
+          background-color: rgba(#fff,0.8)
+          position: absolute
+          right: 20px
+          top: 40px
+          border-radius: 15px
+          transform: translateY(60px)
+          transition: 0.8s
+          opacity: 0
+          box-shadow: 4px 4px 5px rgba(#333,0.6)
+          a
+            text-decoration: none
+          h3
+            margin: 16px 25px
+            font-family: 'M PLUS Rounded 1c', sans-serif
+            color: #333
+            cursor: pointer
+            transition: 0.5s
+            &:hover
+              color: #368E81
+            span
+              // display: inline-block
+              // position: absolute
+              // right: 0
+              margin-left: 16px
+          p
+            padding: 0px 25px
+    .swiper-slide.swiper-slide-active
+      opacity: 1
+      img
+        opacity: 1
+      .board
+        transform: translateY(0px)
+        opacity: 1
+    .swiper-button-next
+      width: 50px
+      height: 50px
+    .swiper-button-prev
+      width: 50px
+      height: 50px
+    .swiper-pagination
+      width: 245px
+      height: 26px
+      top: 150px
+      left: calc(100% - 280px)
+      span.swiper-pagination-bullet
+        width: 18px
+        height: 8px
+        border-radius: 5px
+        position: 1
+        transition: 0.5s
+      span.swiper-pagination-bullet-active
+        background-color: $color_sub
+        width: 18px
+        height: 18px
+        border-radius: 50%
+        opacity: 1
+    .swiper-btn
+      position: absolute
+      width: 150px
+      right: 40px
+      bottom: 115px
+
+      .swiper-button-next,.swiper-button-prev
+        border-radius: 10px
+        background-color: $color_btn
+        transition: 0.5s
+        box-shadow: 3px 3px 3px rgba(#333,0.4)
+        &:hover
+          background-color: $color_sub
+      .swiper-button-prev::after
+section#contact
+  height: 100%
+  display: none
+  .contact
+    display: flex
+    height: 100%
+    justify-content: center
+    align-items: center
+    animation: fadeIn 1s
+    svg
+      width: 80px
+      height: 80px
+      stroke: $color_sub 
+      stroke-width: 4px
+      fill: none
+    .icon
+      font-size: 50px
+      cursor: pointer
+      position: absolute
+      i
+        margin: 15px
+        transition: 0.5s
+        color: #333
+        &:hover
+          color: $color_btn
+      i.fa.fa-codepen
+        margin-left: 22px
+      i.fa.fa-envelope-o
+        display: inline-block
+        margin-top: 15px
+        font-size: 46px
+        margin-top: -5px
+        
+
+.theme-switch
+  background-color: #C4C4C4
+  width: 60px
+  height: 30px
+  border-radius: 15px
+  margin-left: auto
+  animation: fadeIn 1.3s
+  .switch
+    background-color: #788390
+    width: 24px
+    height: 24px
+    border-radius: 100%
+    position: absolute
+    top: 3px
+    left: 3px
+    transition: 0.5s ease
+    font-size: 16px
+    color: $color_light
+    cursor: pointer
+    &:hover
+      background-color: #666
+    i.fa.fa-sun-o
+      margin-left: 4px
+      margin-top: 4px
+    i.fa.fa-moon-o
+      display: none
+      margin-left: 6px
+      margin-top: 4px
+    
+.dark-theme
+  background-color: $color_dark
+  .theme-switch
+    .switch
+      transform: translateX(30px) 
+      i.fa.fa-moon-o
+        display: block
+        position: absolute
+  .bg
+    background-color: rgba($color_bg,0.7)
+    
+  

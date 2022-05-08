@@ -1,102 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on No Code No Life</title>
-    <link>https://hxsxixn.github.io/posts/</link>
-    <description>Recent content in Posts on No Code No Life</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Evan</copyright>
-    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hxsxixn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Table表格</title>
-      <link>https://hxsxixn.github.io/posts/2022-03-22-table/</link>
-      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-03-22-table/</guid>
-      <description>表格  &amp;lt;table border=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;caption&amp;gt;人員名單&amp;lt;/caption&amp;gt;&amp;lt;tr&amp;gt; //table row&amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt; //table header 會顯示粗體字&amp;lt;th&amp;gt;Age&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;Bill&amp;lt;/td&amp;gt; //table cell&amp;lt;td&amp;gt;28&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;Amy&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;16&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt; 合併儲存格  &amp;lt;table border=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt;&amp;lt;th colspan=&amp;#34;2&amp;#34;&amp;gt;Age&amp;lt;/th&amp;gt; //合併2格，垂直合併是rowspan&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;Amy&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;16&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;girl&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt; </description>
-    </item>
-    
-    <item>
-      <title>Swiper幻燈片</title>
-      <link>https://hxsxixn.github.io/posts/2022-03-14-swiper/</link>
-      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-03-14-swiper/</guid>
-      <description>codepen: Netflix Single’s Inferno
-Swiper Swiper中文文檔
-HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-1.swiper　//content,7之後的版本是&amp;#34;swiper&amp;#34;,6之前是&amp;#34;.swiper-container&amp;#34; 2　.swiper-wrapper 3 .swiper-slide //slide 1 4 img 5 .swiper-slide //slide 2 6 img 7 .swiper-pagination //分頁器 Javascript－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-1var swiper = new Swiper(&amp;#39;.swiper&amp;#39;,{ 2 pagination: {el:&amp;#39;.swiper-pagination&amp;#39;}, //分頁器設定 3 loop: true, //循環 4 speed: 1000, 5 direction:&amp;#39;vertical&amp;#39; //輪播方向,預設為水平, 6 autoplay:{ 7 delay: 2000, //自動撥放停留時間 8 disableOnInteraction: false, //使用者滑動後是否停止播放 9 }, 10}) </description>
-    </item>
-    
-    <item>
-      <title>Vue.js將變數帶入模板</title>
-      <link>https://hxsxixn.github.io/posts/2022-03-13/</link>
-      <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-03-13/</guid>
-      <description>codepen: 互動鋼琴 v-model
-HTML－－－－－－－－－－－－－－－－－－－－－－－－－－－
-{{}} 使用大括號來取代資料
-v-for 產生資料,套用進想顯示的樣式中
-.classname(v-for=&amp;#34;(w,id) in data1&amp;#34;) {{w}} //產生資料,w為自定義名稱,id是資料順序 v-if 設置條件來過濾資料的顯示
-.classname(v-if=&amp;#34;w.type==&amp;#39;block&amp;#39;&amp;#34;) //w之下的&amp;#34;type物件&amp;#34;,若為block則顯示 v-on 用來綁定事件
-.classname(v-on:click=&amp;#34;function名稱&amp;#34;) //function在methods中定義 v-bind 可直接使用html語法
-.classname(v-bind:class=&amp;#34;background-color:pink&amp;#34;).classname(v-bind:class=&amp;#34;playnote(aa)?&amp;#39;true&amp;#39;:&amp;#39;false&amp;#39;&amp;#34;) //也可使用條件 v-model 綁定使用者輸入內容
-input(v-model=&amp;#34;color&amp;#34;)input(v-model=&amp;#34;class&amp;#34;).testbox(style=&amp;#34;background-color: {{color}}&amp;#34; class=&amp;#34;{{class}}&amp;#34;) JavaScript－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-var vm=new Vue({el:&amp;#34;#app&amp;#34;, //作用的iddata:{ //可定義多組資料,自定義名稱並用逗號隔開data1: data_list, //資料1data2:[{name:&amp;#34;&amp;#34;,price:},{name:&amp;#34;&amp;#34;,price:}], //資料2},methods:{ //編寫事件,playnote是事件的function名稱playnote: function(aa){},};}), </description>
-    </item>
-    
-    <item>
-      <title>Navbar切換方式</title>
-      <link>https://hxsxixn.github.io/posts/2022-03-08-navbar/</link>
-      <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-03-08-navbar/</guid>
-      <description>codepen
-滑動 $(&amp;#34;.icon&amp;#34;).click(function(){if($(&amp;#39;.list-box&amp;#39;).css(&amp;#34;display&amp;#34;)==&amp;#34;block&amp;#34;){$(&amp;#34;.list-box&amp;#34;).slideUp();}else{$(&amp;#34;.list-box&amp;#34;).slideDown(); }}) 直接切換 $(&amp;#34;.icon&amp;#34;).click(function(){$(&amp;#34;.list-box&amp;#34;).toggle();}) </description>
-    </item>
-    
-    <item>
-      <title>API串接方式</title>
-      <link>https://hxsxixn.github.io/posts/2022-02-27/</link>
-      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-02-27/</guid>
-      <description>以unsplash為範例
-https://unsplash.com/
-XMLHttpRequest() var url=&amp;#34;https://api.unsplash.com/photos/?client_id=lcYNKXPrF1D5sa_ZlmEc3Wd4cRmigHF3X5OD9eDdCqY&amp;amp;page=11&amp;#34;;xhr = new XMLHttpRequest();xhr.open(&amp;#39;GET&amp;#39;, url, true);xhr.onload = function() {if(this.status &amp;gt;= 200 &amp;amp;&amp;amp; this.status &amp;lt; 400 ){vm.photo = JSON.parse(this.responseText);console.log(vm.photo);}};xhr.send();xhr.onerror = function(){return false}; code pen
-Alax $.ajax({// type:&amp;#34;GET&amp;#34;,url: url,// datatype:&amp;#34;text&amp;#34;,// async: true,success: function(res){vm.photo=JSON.parse(JSON.stringify(res)) }}); codepen codepen hahow</description>
-    </item>
-    
-    <item>
-      <title>利用Markdown語法編寫文章</title>
-      <link>https://hxsxixn.github.io/posts/2022-02-26-markdown-notes/</link>
-      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-02-26-markdown-notes/</guid>
-      <description>標題大小 #代表級數
-# 一級標題 ## 二級標題 ### 三級標題 #### 四級標題 ##### 五級標題 ###### 六級標題 粗體 粗體字
-**粗體字** 斜體 斜體字
-*斜體字* 無法粗體和斜體一起用,也無法利用markdown語法更改顏色
-刪除線 刪除線
-~~刪除線~~ 有序序列 內縮打四個隔空白建
- no.1  s1 s2   no.2 no.3  1. no.1 1. s1 1. s2 1. no.2 1. no.3 無序序列  no1  s1 s2   no2  * no1 * s1 * s2 * no2 引用  hello
- &amp;gt; hello 超連結 外部連結 內部連結</description>
-    </item>
-    
-    <item>
-      <title>Flex對齊方式</title>
-      <link>https://hxsxixn.github.io/posts/2022-02-16-flex/</link>
-      <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hxsxixn.github.io/posts/2022-02-16-flex/</guid>
-      <description>必備屬性 display:flex
-  軸線
- justify-content　主軸(橫向)的對齊方法 1justify-content: flex-start 2justify-content: center 3justify-content: flex-end 4 5justify-content: between //元件間等距 6justify-content: space-around //元件和左右距離皆等距  align-items 交錯軸(縱向)的對齊方法 1align-items: flex-start 2align-items: center 3align-items: flex-end 4 5align-items: stretch //使元件撐滿交錯軸的起點至終點 6align-items: baseline //從文字基線作排列     flex-folw
- flex-direction 決定軸線方向 1flex-direction: row //defaulf 2flex-direction: row-reverse 3flex-direction: column 4flex-direction: column-reverse  flex-wrap 換行設定 1flex-wrap: nowrap 2flex-wrap: wrap 3flex-wrap: wrap-reverse     align-self 自身元件的對齊方式,不會影響其它的設定值</description>
-    </item>
-    
-  </channel>
-</rss>

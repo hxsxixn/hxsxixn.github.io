@@ -1,0 +1,142 @@
+main.container
+  nav.navbar
+    ul.menu
+      li.active(menu-id="0")
+        i.fa.fa-address-book
+          span About
+      li#c_c(menu-id="1")
+        i.fa.fa-star-half-o
+          span Skills
+      li(menu-id="2") 
+        i.fa.fa-folder-open
+          span Works
+      li(menu-id="3")
+        i.fa.fa-envelope
+          span Contact
+    .theme-switch
+      .switch
+        i.fa.fa-sun-o
+        i.fa.fa-moon-o
+  .bg
+    section#about
+      .about
+        .box1
+          img(src="https://ath2.unileverservices.com/wp-content/uploads/sites/4/2020/02/IG-annvmariv-1024x1016.jpg", alt="")
+        .box2
+          .name
+            .ch_name 黃心妤
+            .en_name Evan H.
+          
+          .info
+            p 從事務所的小小組員，熬到上市公司的財務，
+              span 就在此時，我決定跳脫舒適圈，做自己想做的事，
+              span 轉職成為前端工程師！
+    section#skills
+      .skills
+        .box1
+          canvas.c1#chart1(width="200" height="200")
+        .box2
+          canvas.c2#chart2(width="200" height="200")
+    section#works
+      .swiper.mySwiper
+        .swiper-wrapper
+          .swiper-slide 
+            img(src="https://i.imgur.com/AiciQrC.png", alt="")
+            .board
+              a(href="https://hxsxixn.github.io/PlayPiano/" target="_blank")
+                h3 Let's Play Piano
+                  span
+                   i.fa.fa-arrow-right
+              p 包含琴譜導入、錄音、播放功能，並支援鍵盤的互動小程式
+          .swiper-slide 
+            img(src="https://i.imgur.com/Ug2852E.png", alt="")
+            .board
+              a(href="https://code-runner2173.netlify.app/" target="_blank")
+                h3 Code Runner
+                  span
+                   i.fa.fa-arrow-right
+              p 工具導向，可線上編寫程式碼、展示及下載
+          .swiper-slide 
+            img(src="https://i.imgur.com/38d0i16.png", alt="")
+            .board
+              a(href="http://html2.m000384.24241872.tw/" target="_blank")
+                h3 Sysmex Taiwan
+                  span
+                   i.fa.fa-arrow-right
+              p 這是我的商業切版作品
+          .swiper-slide 
+            img(src="https://i.imgur.com/9keVis9.png", alt="")
+            .board
+              a(href="https://hxsxixn.github.io/single/" target="_blank")
+                h3 Single’s Inferno
+                  span
+                   i.fa.fa-arrow-right
+              p RWD Practise
+          .swiper-slide 
+            img(src="https://i.imgur.com/wnOJnkg.png", alt="")
+            .board
+              a(href="https://hxsxixn.github.io/andyu/" target="_blank")
+                h3 ANDYU Design
+                  span
+                   i.fa.fa-arrow-right
+              p 以室內設計公司為主題的作品
+          .swiper-slide 
+            img(src="https://i.imgur.com/8uZvUeF.png", alt="")
+            .board
+              a(href="https://hxsxixn.github.io/craftholic/" target="_blank")
+                h3 Craftholic
+                  span
+                   i.fa.fa-arrow-right
+              p 只是想做一個可愛的網頁
+          .swiper-slide 
+            img(src="https://i.imgur.com/VTHuAnC.png", alt="")
+            .board
+              a(href="http://html-add.e000453.24241872.tw/" target="_blank")
+                h3 Farcent plan 1+1 
+                  span
+                   i.fa.fa-arrow-right
+              p 花仙子公益活動的一頁式網站
+          .swiper-slide 
+            img(src="https://i.imgur.com/hQEnrnY.png", alt="")
+            .board 
+              a(href="https://hxsxixn.github.io/Demo-iphone/" target="_blank")
+                h3  Iphone demo
+                  span  
+                    i.fa.fa-arrow-right
+              p 練習客製化商品的Demo網頁
+          .swiper-slide 
+            img(src="https://i.imgur.com/NAG8FWT.png", alt="")
+            .board
+              a(href="https://hxsxixn.github.io/daybox/" target="_blank")
+                h3 Day Box
+                  span
+                   i.fa.fa-arrow-right
+              p 用SVG刻劃的視覺系動態盒子
+        .swiper-btn
+          .swiper-button-next
+          .swiper-button-prev
+        .swiper-pagination
+    section#contact
+      .contact
+        .box1
+          svg(viewbox="-50 -50 100 100")
+            g
+              rect(x=-25 y=-25 width=50 height=50)
+              animatetransform(attributename="transform" dur="2s" type="rotate" values="0;90;180" repeatcount="indefinite")
+        .box2
+          svg(viewbox="-50 -50 100 100")
+            g
+              rect(x=-25 y=-25 width=50 height=50)
+              animatetransform(attributename="transform" dur="2s" type="rotate" values="0;90;180" repeatcount="indefinite")
+        .box3
+          svg(viewbox="-50 -55 100 100")
+            g
+              rect(x=-25 y=-25 width=50 height=50)
+              animatetransform(attributename="transform" dur="2s" type="rotate" values="0;90;180" repeatcount="indefinite")
+        .icon
+          a(href="https://github.com/hxsxixn" target="_blank")
+            i.fa.fa-github
+          a(href="https://codepen.io/" target="_blank")
+           i.fa.fa-codepen
+          a(href="mailto:x721_k@hotmail.com")
+           i.fa.fa-envelope-o
